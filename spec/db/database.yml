@@ -1,0 +1,18 @@
+sqlite3:
+  adapter: <%= "jdbc" if defined? JRUBY_VERSION %>sqlite3
+  database: active_record_validations_inflector.sqlite3.db
+sqlite3mem:
+  adapter: <%= "jdbc" if defined? JRUBY_VERSION %>sqlite3
+  database: ":memory:"
+postgresql:
+  adapter: postgresql
+  encoding: unicode
+  database: active_record_validations_inflector_plugin_test
+  pool: 5
+  min_messages: warning
+mysql:
+  adapter: <%= defined?(JRUBY_VERSION) ? "jdbcmysql" : "mysql2" %>
+  host: localhost
+  username: root
+  password:
+  database: active_record_validations_inflector_plugin_test

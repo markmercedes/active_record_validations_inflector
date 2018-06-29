@@ -1,0 +1,15 @@
+sudo: false
+language: ruby
+rvm:
+  - 2.5.0
+gemfile:
+  - gemfiles/rails_4.0.gemfile
+  - gemfiles/rails_4.1.gemfile
+  - gemfiles/rails_4.2.gemfile
+  - gemfiles/rails_5.0.gemfile
+  - gemfiles/rails_5.1.gemfile
+  - gemfiles/rails_master.gemfile
+matrix:
+  allow_failures:
+    - gemfile: 'gemfiles/rails_4.2.gemfile'
+before_install: gem install bundler -v 1.16.1
