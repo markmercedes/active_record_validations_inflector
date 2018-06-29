@@ -4,6 +4,7 @@ module ActiveRecordValidationsInflector
       def infer_length_validations(attribute, metadata)
         return if metadata.limit.nil? || has_maximum_length_validator_for?(attribute)
 
+        #TODO: validate limit for integer types
         validates attribute, length: { maximum: metadata.limit }
       end
 
